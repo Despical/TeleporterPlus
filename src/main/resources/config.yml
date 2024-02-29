@@ -1,0 +1,81 @@
+# Command messages.
+messages:
+  no-world-found: "&cNo world could not be found with that name!"
+  not-allowed-here: "&cYou can not teleport in this world!"
+  no-random-location-found: "&cWe couldn't find a random location to teleport you!"
+  reloaded-files: "&aSystem files reloaded successfully"
+
+# Plugin only works in allowed worlds.
+allowed-worlds:
+  - "world"
+  - "world_nether"
+
+# Unsafe blocks that we'll skip for random locations.
+unsafe-blocks:
+  - LAVA
+  - WATER
+  - MAGMA_BLOCK
+  - NETHERRACK
+  - BEDROCK
+
+# Should we teleport players to a random safe location when they die?
+random-tp-on-death: true
+
+# Fallback location that players will teleport if player does not have a last location.
+fallback-location: world, -994.000, 4.000, 853.000, 0.000, 0.000
+
+# Integrations for other plugins.
+integrations:
+  grief-prevention: true
+  hClaims: true
+  towny: true
+  world-guard: true
+
+# General options for TeleporterPlus.
+rtp:
+  # Should we find a safe location around the whole world?
+  world-border: false
+
+  # How many times should we try to find a safe location?
+  max-try: 5
+
+  # Should players have to wait before teleporting?
+  task-enabled: true
+
+  # How many seconds should players have to wait?
+  time: 10
+
+  messages:
+    wait-to-tp: "&aPlease stand still for 10 seconds to teleport!"
+    cancelled: "&cYou have moved and the teleportation is cancelled!"
+    teleported: "&aYou have successfully teleported!"
+    teleporting-in:
+      - "5:&aTeleporting in 5...:title:&aStand still!:subtitle:&aWe are teleporting you..."
+      - "4:&aTeleporting in 4...:title:&aStand still!:subtitle:&aWe are teleporting you..."
+      - "3:&aTeleporting in 3...:title:&aStand still!:subtitle:&aWe are teleporting you..."
+      - "2:&aTeleporting in 2...:title:&aStand still!:subtitle:&aWe are teleporting you..."
+      - "1:&aTeleporting in 1...:title:&aStand still!:subtitle:&aWe are teleporting you..."
+    titles:
+      wait-to-tp-title: "&aWait 10 seconds to teleport!"
+      wait-to-tp-subtitle: "&aStand still while waiting..."
+      teleported-title: "&aTeleported..."
+      teleported-subtitle: ""
+      cancelled-title: "&cTeleport Cancelled!"
+      cancelled-subtitle: ""
+
+  # Add your custom worlds below.
+  worlds:
+    world:
+      min-x: 40
+      min-y: 70
+      min-z: 120
+      max-x: 100
+      max-y: 90
+      max-z: 235
+    world_nether:
+      min-x: 40
+      min-y: 70
+      min-z: 120
+      max-x: 100
+      max-y: 90
+      max-z: 235

@@ -1,0 +1,7 @@
+name: TeleporterPlus
+version: '${project.version}'
+main: me.despical.teleporterplus.Main
+api-version: 1.13
+softdepend: [ PlaceholderAPI, Multiverse-Core, WorldGuard, GriefPrevention, Towny, hClaims ]
+author: Despical
+description: An advanced RTP plugin with lots of features.
