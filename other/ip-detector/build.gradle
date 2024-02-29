@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+}
+
+group = 'me.despical.ipdetector'
+version = '1.0.0'
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+}
+
+repositories {
+    mavenCentral()
+
+    maven {
+        url 'https://papermc.io/repo/repository/maven-public/'
+    }
+}
+
+dependencies {
+    compileOnly 'com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT'
+}
+
+task copyResources(type: Copy) {
+    from 'src/main/resources'
+    into 'build/resources/main'
+
+    // Dosya içindeki değişkenleri yerine geçen değerlerle değiştir
+    expand([version: project.version])
+}
+
+// Bu özel görevi, 'build' görevinden önce çalıştır
+build.dependsOn(copyResources)
+
+jar.dependsOn(copyResources)

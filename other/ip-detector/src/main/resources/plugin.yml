@@ -1,0 +1,5 @@
+name: IP-Detector
+author: Despical
+version: '${version}'
+api-version: 1.13
+main: me.despical.ipdetector.Main
